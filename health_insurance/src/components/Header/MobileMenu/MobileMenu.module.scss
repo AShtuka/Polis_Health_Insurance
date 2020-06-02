@@ -1,0 +1,78 @@
+.mobileMenu {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #374656;
+  box-shadow: 0 8px 32px rgba(185,190,196,.25);
+  background: #fff;
+  max-width: calc(100% - 40px);
+  width: 300px;
+  height: 100vh;
+  position: absolute;
+  z-index: 999;
+  right: 0;
+  top: 0;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  //transition-property: all;
+  //transition-duration: .8s;
+
+  &Header {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 16px 15px;
+    border-bottom: 1px solid #e6ecf2;
+  }
+
+  &Body {
+    height: calc(100% - 174px);
+    border-bottom: 1px solid #e6ecf2;
+  }
+
+  &Footer {
+    height: 110px;
+  }
+
+  &Item {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    border-bottom: 1px solid #e6ecf2;
+  }
+}
+
+.logoLink {
+  height: 32px; //temporarily
+}
+
+.accordionItem {
+  background: #f7f8fa;
+}
+
+.languageBlock {
+  justify-content: flex-start;
+  color: #C4C4C4;
+  border-bottom: none;
+}
+
+.languageItem {
+  margin-right: 24px;
+  cursor: pointer;
+}
+
+//.mobileMenu.entering {
+//  transform: translateX(100%);
+//}
+//.mobileMenu.entered {
+//  transform: translateX(0%);
+//  transition:transform 500ms;
+//}
+//.mobileMenu.exiting {
+//  transform: translateX(0%);
+//}
+//.mobileMenu.exited {
+//  transform: translateX(100%);
+//  transition:transform 500ms;
+//}
+
+

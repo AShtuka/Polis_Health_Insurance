@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './App.module.scss';
+import Header from "./components/Header";
 
 function App() {
-  return <h1 className={styles.test}>Hello World</h1>
+  return <Header />
 }
 
 export default App;
