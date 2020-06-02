@@ -14,8 +14,6 @@
   top: 0;
   overflow-y: hidden;
   overflow-x: hidden;
-  //transition-property: all;
-  //transition-duration: .8s;
 
   &Header {
     display: flex;
@@ -49,6 +47,11 @@
   background: #f7f8fa;
 }
 
+.accordionMenuItem {
+  border-bottom: none;
+  font-weight: 400;
+}
+
 .languageBlock {
   justify-content: flex-start;
   color: #C4C4C4;
@@ -60,19 +63,16 @@
   cursor: pointer;
 }
 
-//.mobileMenu.entering {
-//  transform: translateX(100%);
-//}
-//.mobileMenu.entered {
-//  transform: translateX(0%);
-//  transition:transform 500ms;
-//}
-//.mobileMenu.exiting {
-//  transform: translateX(0%);
-//}
-//.mobileMenu.exited {
-//  transform: translateX(100%);
-//  transition:transform 500ms;
-//}
+.activeLanguageItem {
+  color: #0a7e3e;
+}
 
+.active {
+  background: linear-gradient(0deg,#189851,#189851),#0a7e3e;
+  color: white;
+}
+
+.rotated270 {
+  transform: rotate(-90deg);
+}
 

@@ -4,9 +4,6 @@ import Logo from './icons/logo.svg';
 import SearchIcon from './icons/searchIcon.svg';
 import MenuIcon from './icons/menuIcon.svg';
 import MobileMenu from "./MobileMenu";
-// import { CSSTransition } from "react-transition-group";
-// import slideTransition from './transition/slide.module..scss'
-
 
 const Header = () => {
 
@@ -18,13 +15,13 @@ const Header = () => {
         <header>
             <nav className={styles.navbar}>
                 <a href="/health">
-                    <img src={Logo} alt="LogoPolisUA"/>
+                    <img src={Logo} alt="PolisUA"/>
                 </a>
                 <div className={styles.btnBlock}>
-                    <img className={styles.searchIcon} src={SearchIcon} alt="SearchIcon"/>
+                    <img className={styles.searchIcon} src={SearchIcon} alt="Search"/>
                     <img className={styles.menuIcon}
                          src={MenuIcon}
-                         alt="Menu Icon"
+                         alt="Menu"
                          onClick={openMenuHandler}
                     />
                 </div>
@@ -32,16 +29,6 @@ const Header = () => {
             <div className={panelHide}
                  onClick={() => setIsOpen(false)}
             />
-            {/*<CSSTransition*/}
-            {/*    in={isOpen}*/}
-            {/*    timeout={200}*/}
-            {/*    classNames={slideTransition}*/}
-            {/*    unmountOnExit*/}
-            {/*>*/}
-            {/*    {*/}
-            {/*        state => <MobileMenu openMenu={openMenuHandler}/>*/}
-            {/*    }*/}
-            {/*</CSSTransition>*/}
             {isOpen ? <MobileMenu openMenu={openMenuHandler} /> : null}
         </header>
     )

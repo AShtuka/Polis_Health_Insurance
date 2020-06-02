@@ -1,0 +1,47 @@
+.mobileSubMenu {
+  composes: mobileMenu from '../MobileMenu.module.scss';
+  top: 64px;
+  z-index: 1000;
+  max-width: 100%;
+
+  &Body {
+    border-top: 1px solid #e6ecf2;
+    padding: 0 16px;
+  }
+}
+
+.accordionItem {
+  background: #f7f8fa;
+}
+
+.accordionMenuItem {
+  border-bottom: none;
+  font-weight: 400;
+}
+
+.cardImg {
+  width: 100%;
+}
+
+.cardTitle {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.cardItemPrice {
+  color: #0a7e3e;
+}
+
+.card {
+  margin-top: 24px;
+}
+
+.rotated180 {
+  transform: rotate(180deg);
+}
+
+.mobileMenuItem {
+  composes: mobileMenuItem from '../MobileMenu.module.scss';
+  justify-content: flex-start;
+}
