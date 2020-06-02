@@ -1,0 +1,14 @@
+.languageBlock {
+  justify-content: flex-start;
+  color: #C4C4C4;
+  border-bottom: none;
+}
+
+.languageItem {
+  margin-right: 24px;
+  cursor: pointer;
+}
+
+.active {
+  color: #0a7e3e;
+}

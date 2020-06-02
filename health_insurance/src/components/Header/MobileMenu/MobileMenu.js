@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import MobileMenuItem from "./MobileMenuItem";
 import AccordionMenu from "./AccordionMenu";
 import MobileSubMenu from './SubMenu';
+import LanguageBlock from "../LanguageBlock";
 
 import Logo from "../icons/logo.svg";
 import MenuIcon from "../icons/menuIcon.svg";
@@ -68,7 +69,6 @@ const MobileMenu = (props) => {
     });
 
     const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
-    const [activeLanguage, setActiveLanguage] = useState(true);
 
     return (
         <div className={styles.mobileMenu}>
@@ -83,11 +83,13 @@ const MobileMenu = (props) => {
                                      {isPersonMenuOpen: !isAccordionMenuOpen.isPersonMenuOpen,
                                             isBusinessMenuOpen: false})} />
 
-                {isAccordionMenuOpen.isPersonMenuOpen ? <AccordionMenu items={accordionMenuForPerson}
-                                                              clickHandler={() => setIsSubMenuOpen(!isSubMenuOpen)} />
-                                             :
-                                             null
+                {isAccordionMenuOpen.isPersonMenuOpen ?
+                    <AccordionMenu items={accordionMenuForPerson}
+                                   clickHandler={() => setIsSubMenuOpen(!isSubMenuOpen)} />
+                                                      :
+                    null
                 }
+
                 {isSubMenuOpen ? <MobileSubMenu onClickHandler={() => setIsSubMenuOpen(!isSubMenuOpen)}/>: null}
 
                 <MobileMenuItem title='Бизнесу'
@@ -107,18 +109,7 @@ const MobileMenu = (props) => {
                 <MobileMenuItem title='Лист сравнения'
                             icon={CompereIcon}
                             iconTitle='Compere' />
-                <div className={`${styles.mobileMenuItem} ${styles.languageBlock}`}>
-                    <span className={activeLanguage ?
-                                    `${styles.languageItem} ${styles.activeLanguageItem}`
-                                    : styles.languageItem}
-                          onClick={() => setActiveLanguage(true)}
-                    >UA</span>
-                    <span className={activeLanguage ?
-                                    styles.languageItem
-                                    : `${styles.languageItem} ${styles.activeLanguageItem}`}
-                          onClick={() => setActiveLanguage(false)}
-                    >RU</span>
-                </div>
+                <LanguageBlock isMobile={true} containerStyle={styles.mobileMenuItem} />
             </div>
         </div>
     )

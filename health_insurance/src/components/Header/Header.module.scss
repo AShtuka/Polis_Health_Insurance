@@ -1,21 +1,87 @@
+$small: 576px;
+$medium: 768px;
+$large: 992px;
+$extraLarge: 1200px;
+
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: $small) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $small + 1) and (max-width: $large - 1) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $extraLarge) { @content; }
+  }
+}
+
 .navbar {
+  font-family: 'Lato', sans-serif;
   padding: 16px;
   display: flex;
   justify-content: space-between;
   height: 32px; // temporarily
+
+  @include respond-to(wide-screens) {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 40px;
+  }
+
+  &RightBlock {
+    display: flex;
+    align-items: center;
+  }
+
+  &LeftBlock {
+    display: flex;
+    align-items: center;
+  }
+
 }
 
-.btnBlock {
-  display: flex;
+.desktopItem {
+  display: none;
+  margin-left: 40px;
+  font-size: 14px;
+  color: #374656;
+  box-sizing: content-box;
+  padding: 24px 0 31px;
+  border-top: 3px solid transparent;
+
+  @include respond-to(wide-screens) {
+    display: block;
+  }
+}
+
+.active {
+  border-top: 3px solid #0a7e3e;
+}
+
+.logoImg {
+  height: 32px;
+
+  @include respond-to(wide-screens) {
+    height: 40px;
+  }
+
 }
 
 .searchIcon {
   margin-right: 48px;
   cursor: pointer;
+
+  @include respond-to(wide-screens) {
+    display: none;
+  }
 }
 
 .menuIcon {
   cursor: pointer;
+
+  @include respond-to(wide-screens) {
+    display: none;
+  }
 }
 
 .panelHide {
