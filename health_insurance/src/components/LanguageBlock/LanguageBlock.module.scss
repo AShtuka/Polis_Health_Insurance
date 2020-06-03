@@ -1,12 +1,18 @@
 .languageBlock {
   justify-content: flex-start;
-  color: #C4C4C4;
   border-bottom: none;
 }
 
 .languageItem {
   margin-right: 24px;
   cursor: pointer;
+  color: #C4C4C4;
+}
+
+.languageItemDesktop {
+  cursor: pointer;
+  margin-right: 5px;
+  color: #C4C4C4;
 }
 
 .active {

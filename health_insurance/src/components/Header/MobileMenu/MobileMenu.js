@@ -3,7 +3,7 @@ import React, {useState} from "react";
 import MobileMenuItem from "./MobileMenuItem";
 import AccordionMenu from "./AccordionMenu";
 import MobileSubMenu from './SubMenu';
-import LanguageBlock from "../LanguageBlock";
+import LanguageBlock from "../../LanguageBlock";
 
 import Logo from "../icons/logo.svg";
 import MenuIcon from "../icons/menuIcon.svg";
@@ -12,37 +12,7 @@ import CompereIcon from '../icons/compereIcon.svg';
 
 import styles from './MobileMenu.module.scss';
 
-const accordionMenuForPerson = [
-    {
-        id: 1,
-        title: 'Страхование',
-        icon: ArrowRightIcon,
-        iconTitle: 'Arrow',
-        style: styles.accordionMenuItem
-    },
-    {
-        id: 2,
-        title: 'Онлайн-кредиты',
-        style: styles.accordionMenuItem
-    },
-    {
-        id: 3,
-        title: 'Кредитные карты',
-        style: styles.accordionMenuItem
-    },
-];
-const accordionMenuForBusiness = [
-    {
-        id: 1,
-        title: 'Платформа для бизнеса',
-        style: styles.accordionMenuItem
-    },
-    {
-        id: 2,
-        title: 'Документация API',
-        style: styles.accordionMenuItem
-    },
-];
+import { menuForPerson, menuForBusiness}  from '../MenuItems/MenuItems'
 
 const MobileMenuHeader = (props) => {
 
@@ -84,7 +54,7 @@ const MobileMenu = (props) => {
                                             isBusinessMenuOpen: false})} />
 
                 {isAccordionMenuOpen.isPersonMenuOpen ?
-                    <AccordionMenu items={accordionMenuForPerson}
+                    <AccordionMenu items={menuForPerson}
                                    clickHandler={() => setIsSubMenuOpen(!isSubMenuOpen)} />
                                                       :
                     null
@@ -101,9 +71,10 @@ const MobileMenu = (props) => {
                                      {isBusinessMenuOpen: !isAccordionMenuOpen.isBusinessMenuOpen,
                                             isPersonMenuOpen: false})} />
 
-                {isAccordionMenuOpen.isBusinessMenuOpen ? <AccordionMenu items={accordionMenuForBusiness} /> : null}
-
-                <MobileMenuItem title='Реферальная программа' />
+                {isAccordionMenuOpen.isBusinessMenuOpen ? <AccordionMenu items={menuForBusiness} /> : null}
+                <a href="/program">
+                    <MobileMenuItem title='Реферальная программа' />
+                </a>
             </div>
             <div className={styles.mobileMenuFooter}>
                 <MobileMenuItem title='Лист сравнения'

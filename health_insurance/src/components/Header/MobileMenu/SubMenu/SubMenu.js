@@ -1,4 +1,5 @@
 import React from "react";
+import Card from "../../Card";
 
 import MobileMenuItem from "../MobileMenuItem";
 import ArrowRightIcon from "../../icons/arrowRightIcon.png";
@@ -30,24 +31,18 @@ const SubMenu = (props) => {
                             style={styles.accordionItem}
                             onClickHandler={onClickHandler}
             />
-            <MobileMenuItem title='ОСАГО' style={styles.accordionMenuItem}/>
-            <MobileMenuItem title='Туристическое страхование' style={styles.accordionMenuItem}/>
-            <MobileMenuItem title='КАСКО' style={styles.accordionMenuItem}/>
+            <a href="/osago"><MobileMenuItem title='ОСАГО' style={styles.accordionMenuItem}/></a>
+            <a href="/insurance"><MobileMenuItem title='Туристическое страхование' style={styles.accordionMenuItem}/></a>
+            <a href="/casko"><MobileMenuItem title='КАСКО' style={styles.accordionMenuItem}/></a>
             <div className={styles.mobileSubMenuBody}>
-                <div className={styles.card}>
-                    <img className={styles.cardImg} src="https://test.polis.ua/kasko/static/media/1.c1a9cce9.jpg" alt="IMG NOT FOUND"/>
-                    <div className={styles.cardTitle}>
-                        <p>ОСАГО</p>
-                        <p className={styles.cardItemPrice}>600 ГРН</p>
-                    </div>
-                </div>
-                <div className={styles.card}>
-                    <img className={styles.cardImg} src="https://test.polis.ua/kasko/static/media/2.087f1b20.jpg" alt="IMG NOT FOUND"/>
-                    <div className={styles.cardTitle}>
-                        <p>Европа, Турция, Египет</p>
-                        <p className={styles.cardItemPrice}>50 ГРН</p>
-                    </div>
-                </div>
+                <Card linkTo='/osago'
+                      img='https://test.polis.ua/kasko/static/media/1.c1a9cce9.jpg'
+                      title='ОСАГО' price='600 ГРН'
+                      isMobile={true} />
+                <Card linkTo='/insurance'
+                      img='https://test.polis.ua/kasko/static/media/2.087f1b20.jpg'
+                      title='Европа, Турция, Египет' price='50 ГРН'
+                      isMobile={true}  />
             </div>
         </div>
     )

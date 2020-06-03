@@ -4,14 +4,35 @@ $large: 992px;
 $extraLarge: 1200px;
 
 @mixin respond-to($media) {
-  @if $media == handhelds {
+  @if $media == mobile {
     @media only screen and (max-width: $small) { @content; }
   }
-  @else if $media == medium-screens {
+  @else if $media == tablet {
     @media only screen and (min-width: $small + 1) and (max-width: $large - 1) { @content; }
   }
-  @else if $media == wide-screens {
+  @else if $media == desktop {
     @media only screen and (min-width: $extraLarge) { @content; }
+  }
+}
+
+.header {
+  position: relative;
+
+  &Top {
+    width: 100%;
+    border-bottom: 1px solid #E6ECF2;
+  }
+
+  &Bottom {
+    display: none;
+    text-transform: uppercase;
+    color: #374656;
+    font-weight: bold;
+    border-bottom: 1px solid #E6ECF2;
+
+    @include respond-to(desktop) {
+      display: block;
+    }
   }
 }
 
@@ -22,7 +43,7 @@ $extraLarge: 1200px;
   justify-content: space-between;
   height: 32px; // temporarily
 
-  @include respond-to(wide-screens) {
+  @include respond-to(desktop) {
     max-width: 1200px;
     margin: 0 auto;
     height: 40px;
@@ -37,21 +58,47 @@ $extraLarge: 1200px;
     display: flex;
     align-items: center;
   }
-
 }
 
-.desktopItem {
+.navbarBottom {
+  @extend .navbar;
+  padding: 20px 16px;
+}
+
+.desktopItemLeftBlock {
   display: none;
   margin-left: 40px;
   font-size: 14px;
   color: #374656;
-  box-sizing: content-box;
   padding: 24px 0 31px;
   border-top: 3px solid transparent;
+  cursor: pointer;
 
-  @include respond-to(wide-screens) {
+  @include respond-to(desktop) {
     display: block;
   }
+}
+
+.desktopItemRightBlock {
+  display: none;
+  margin-left: 40px;
+  font-size: 14px;
+  color: #374656;
+  cursor: pointer;
+
+  @include respond-to(desktop) {
+    display: block;
+  }
+}
+
+.loginBtn {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #0A994A;
+  background: none;
+  border: 1px solid #0A994A;
+  border-radius: 3px;
+  padding: 11px 17px;
 }
 
 .active {
@@ -61,17 +108,16 @@ $extraLarge: 1200px;
 .logoImg {
   height: 32px;
 
-  @include respond-to(wide-screens) {
+  @include respond-to(desktop) {
     height: 40px;
   }
-
 }
 
 .searchIcon {
   margin-right: 48px;
   cursor: pointer;
 
-  @include respond-to(wide-screens) {
+  @include respond-to(desktop) {
     display: none;
   }
 }
@@ -79,7 +125,7 @@ $extraLarge: 1200px;
 .menuIcon {
   cursor: pointer;
 
-  @include respond-to(wide-screens) {
+  @include respond-to(desktop) {
     display: none;
   }
 }

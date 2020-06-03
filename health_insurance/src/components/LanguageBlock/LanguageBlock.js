@@ -5,9 +5,10 @@ const LanguageBlock = (props) => {
 
     const { isMobile, containerStyle } = props;
     const [activeLanguage, setActiveLanguage] = useState(false);
-    const container = isMobile ? `${containerStyle} ${styles.languageBlock}` : null;
-    let ru = activeLanguage ? styles.languageItem : `${styles.languageItem} ${styles.active}`;
-    let ua = activeLanguage ? `${styles.languageItem} ${styles.active}` : styles.languageItem;
+    const itemStyle = isMobile ? styles.languageItem : styles.languageItemDesktop;
+    const container = isMobile ? `${containerStyle} ${styles.languageBlock}` : containerStyle;
+    let ru = activeLanguage ? itemStyle : `${itemStyle} ${styles.active}`;
+    let ua = activeLanguage ? `${itemStyle} ${styles.active}` : itemStyle;
 
     return (
         <div className={container}>

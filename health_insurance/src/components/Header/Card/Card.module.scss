@@ -1,0 +1,24 @@
+.cardImg {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.cardTitle {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.cardItemPrice {
+  color: #0a7e3e;
+}
+
+.cardMobile {
+  margin-top: 24px;
+  width: 268px;
+}
+
+.cardDesktop {
+  margin-left: 24px;
+  width: 268px;
+}

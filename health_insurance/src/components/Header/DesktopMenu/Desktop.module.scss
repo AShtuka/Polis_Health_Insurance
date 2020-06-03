@@ -1,0 +1,21 @@
+.headerBottomItem {
+  display: flex;
+  margin-right: 40px;
+  cursor: pointer;
+  padding: 31px 0;
+  border-bottom: 2px solid transparent;
+}
+
+.headerBottomItem:hover {
+  border-bottom: 2px solid #0a7e3e;
+  color: #0a7e3e;
+}
+
+.active {
+  color: #0a7e3e;
+}
+
+.headerBottomIcon {
+  margin-left: 10px;
+  cursor: pointer;
+}
